@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -26,28 +26,29 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="text-xl font-semibold mb-4">Contact</h4>
-            <p className="mb-2">Email: support@example.com</p>
-            <p className="mb-2">Phone: (123) 456-7890</p>
-            <p className="mb-2">Address: 123 E-commerce St, City, Country</p>
+            <p className="mb-2">Email: techvernsync@gmail.com</p>
+            <p className="mb-2">For Any Qury: (+91) 9614639437</p>
+            <p className="mb-2">For Any Issue: (+91) 6296491136</p>
+            <p className="mb-2">Address: Nischintapur Chowrasta, 1No Road, West Bengal, 743374</p>
           </div>
         </div>
         {/* Social Media Links */}
         <div className="flex justify-center mt-6">
-          <a href="#" className="mx-2">
+          <a href="https://www.facebook.com/techverncom" className="mx-2">
             <FaFacebookF className="h-6 w-6" />
           </a>
-          <a href="#" className="mx-2">
+          {/* <a href="#" className="mx-2">
             <FaTwitter className="h-6 w-6" />
-          </a>
-          <a href="#" className="mx-2">
+          </a> */}
+          <a href="https://www.facebook.com/techverncom" className="mx-2">
             <FaInstagram className="h-6 w-6" />
           </a>
-          <a href="#" className="mx-2">
+          {/* <a href="#" className="mx-2">
             <FaLinkedinIn className="h-6 w-6" />
-          </a>
+          </a> */}
         </div>
         <div className="text-center mt-6">
-          <p className="text-sm">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+          <p className="text-sm">&copy; {new Date().getFullYear()} Techvern.com. All rights reserved.</p>
         </div>
       </div>
     </footer>
