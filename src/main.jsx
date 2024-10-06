@@ -11,7 +11,6 @@ import PrivateRoute from "./routes/PrivateRoute";
 import Profile from "./components/Profile";
 import Home from "./components/Home/Home";
 import ErrorPage from "./ErrorPage/ErrorPage";
-// import Product from "./components/Home/Product";
 
 const router = createBrowserRouter([
   {
