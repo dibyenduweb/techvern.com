@@ -1,12 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from "react";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
-import { AiOutlineUser, AiOutlineTool, AiOutlineShopping } from "react-icons/ai";
+import {
+  AiOutlineUser,
+  AiOutlineTool,
+  AiOutlineShopping,
+} from "react-icons/ai";
 import { HiMenu } from "react-icons/hi";
 import logo from "../../assets/images/techvern.png";
 import useAuth from "../../Hooks/useAuth";
-import Menu from "./Menu";
 import { FaComputer } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { user, logOut } = useAuth(); // Destructure user and logout from the hook
@@ -41,8 +45,14 @@ const Header = () => {
         <div className="container mx-auto flex items-center justify-between py-4 px-4">
           {/* Mobile View: Hamburger, Logo, and Cart Icon */}
           <div className="flex md:hidden items-center justify-between w-full">
-            <HiMenu size={24} className="text-gray-700 cursor-pointer" onClick={() => setIsOpen(!isOpen)} />
-            <img src={logo} alt="techvern" className="h-10 w-auto mx-auto" />
+            <HiMenu
+              size={24}
+              className="text-gray-700 cursor-pointer"
+              onClick={() => setIsOpen(!isOpen)}
+            />
+            <Link to="/">
+              <img src={logo} alt="techvern" className="h-10 w-auto mx-auto" />
+            </Link>
             <FiShoppingCart className="text-red-500" size={24} />
           </div>
 
@@ -50,7 +60,9 @@ const Header = () => {
           <div className="hidden md:flex items-center justify-between w-full">
             {/* Logo */}
             <div className="flex items-center">
-              <img src={logo} alt="techvern" className="h-10 w-auto mr-4" />
+              <Link to="/">
+                <img src={logo} alt="techvern" className="h-10 w-auto mr-4" />
+              </Link>
             </div>
 
             {/* Search Input */}
@@ -60,23 +72,34 @@ const Header = () => {
                 placeholder="Search for Products..."
                 className="border border-gray-300 rounded-full px-2 py-2 w-full focus:outline-none focus:ring-2 focus:ring-red-500"
               />
-              <FiSearch className="absolute top-2 right-4 text-gray-500" size={20} />
+              <FiSearch
+                className="absolute top-2 right-4 text-gray-500"
+                size={20}
+              />
             </div>
 
             {/* Right Section (Offer, Servicing, Account, Cart) */}
             <div className="flex items-center space-x-6">
               <div className="flex items-center gap-2 justify-center bg-cyan-600 rounded-sm p-2">
                 <AiOutlineShopping className="text-white" size={24} />
-                <span className="text-white font-semibold">Offer</span>
+                <Link to="/offers">
+                <span className="text-white font-semibold">Offers</span>
+
+                </Link>
               </div>
 
               <div className="flex items-center gap-2 justify-center bg-red-500 rounded-sm p-2">
                 <AiOutlineTool className="text-white" size={24} />
+                <Link to="/serviceing">
                 <span className="text-white font-semibold">Servicing</span>
+                </Link>
               </div>
 
               {/* Profile or Login Button */}
-              <div className="relative flex items-center gap-2" ref={dropdownRef}>
+              <div
+                className="relative flex items-center gap-2"
+                ref={dropdownRef}
+              >
                 <div className="flex items-center justify-center bg-red-500 rounded-full p-2">
                   <AiOutlineUser className="text-white" size={24} />
                 </div>
@@ -122,8 +145,8 @@ const Header = () => {
                 )}
               </div>
 
-              <a 
-                href="/pc-builder" 
+              <a
+                href="/pc-builder"
                 className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-full flex items-center text-xl"
               >
                 <FaComputer className="mr-2 text-2xl" />
@@ -132,7 +155,9 @@ const Header = () => {
 
               <div className="relative">
                 <FiShoppingCart className="text-red-500" size={24} />
-                <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs px-1">0</span>
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs px-1">
+                  0
+                </span>
               </div>
             </div>
           </div>
@@ -153,7 +178,10 @@ const Header = () => {
 
               {/* Show login/logout for mobile */}
               <div className="flex items-center space-x-2">
-                <AiOutlineUser className="text-red-500 text-center mt-4" size={24} />
+                <AiOutlineUser
+                  className="text-red-500 text-center mt-4"
+                  size={24}
+                />
                 {user ? (
                   <div className="flex items-center space-x-2">
                     <span>{user.displayName}</span>
@@ -165,20 +193,25 @@ const Header = () => {
                     </button>
                   </div>
                 ) : (
-                  <a href="/login" className="block bg-green-600 text-white px-4 py-2 rounded-md text-center">
+                  <a
+                    href="/login"
+                    className="block bg-green-600 text-white px-4 py-2 rounded-md text-center"
+                  >
                     Sign in
                   </a>
                 )}
               </div>
 
-              <a href="/pc-builder" className="block bg-orange-500 text-white text-center px-4 py-2 rounded-full">
+              <a
+                href="/pc-builder"
+                className="block bg-orange-500 text-white text-center px-4 py-2 rounded-full"
+              >
                 PC Builder
               </a>
             </div>
           </div>
         )}
       </nav>
-      <Menu />
     </>
   );
 };

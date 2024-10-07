@@ -11,6 +11,8 @@ import PrivateRoute from "./routes/PrivateRoute";
 import Profile from "./components/Profile";
 import Home from "./components/Home/Home";
 import ErrorPage from "./ErrorPage/ErrorPage";
+import Pcbuilder from "./components/Pages/Pcbuilder";
+import Serviceing from "./components/Pages/serviceing";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path:"/profile",
         element:<PrivateRoute><Profile></Profile></PrivateRoute>
+      },
+      {
+        path:"/pc-builder",
+        element:<PrivateRoute><Pcbuilder></Pcbuilder></PrivateRoute>
+      },
+      {
+        path:"/serviceing",
+        element:<PrivateRoute><Serviceing></Serviceing></PrivateRoute>
       },
 
     ]

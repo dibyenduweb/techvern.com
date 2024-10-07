@@ -3,26 +3,21 @@ import { useLoaderData } from "react-router-dom";
 
 
 import Container from "../Container/Container";
-import Header from "./Header";
 import Carousel from "./Carousel";
 import FeaturedCategory from "./FeaturedCategory";
 import Products from "./Products";
-import Footer from "../Section/Footer";
-
-
-
-
+import Menu from "./Menu";
 const Home = () => {
     const brandData = useLoaderData();
     console.log(brandData);
     return (
         <>
-        <Header/>
+       
+        <Container>
+        <Menu/>
         <Carousel/>
         <FeaturedCategory/>
         <Products/>
-        <Footer/>
-        <Container>
       </Container>
             </>
        
